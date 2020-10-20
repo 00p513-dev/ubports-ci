@@ -58,8 +58,8 @@ jobs:
         cd $ANDROID_ROOT
         repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
         mkdir -p $ANDROID_ROOT/.repo/local_manifests
-        wget https://raw.githubusercontent.com/HandsomeYingyan/local_manifests/master/"$DEVICE".xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
-        repo sync -j8 -c --no-clone-bundle --no-tags
+        wget https://raw.githubusercontent.com/00p513-dev/local_manifests/halium/"$DEVICE".xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
+        repo sync -j$(nproc --all) -c --no-clone-bundle --no-tags
     
     - name: Build HAL
       run: |
