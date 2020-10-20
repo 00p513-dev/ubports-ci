@@ -71,16 +71,16 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: halium-boot image
-        path: /home/runner/work/halium/out/target/product/kenzo/halium-boot.img
+        path: /home/runner/work/halium/out/target/product/$DEVICE/halium-boot.img
 
     - name : Upload recovery image
       uses: actions/upload-artifact@master
       with:
         name: Recovery image
-        path: /home/runner/work/halium/out/target/product/kenzo/recovery.img
+        path: /home/runner/work/halium/out/target/product/$DEVICE/recovery.img
 
     - name : Upload system image
       uses: actions/upload-artifact@master
       with:
         name: System image
-        path: /home/runner/work/halium/out/target/product/kenzo/system.img
+        path: /home/runner/work/halium/out/target/product/$DEVICE/system.img
